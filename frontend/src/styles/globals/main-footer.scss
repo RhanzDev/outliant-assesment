@@ -15,7 +15,7 @@
         width: 100%;
         margin-top: -100px;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 50px;
+        grid-gap: 80px;
         .left 
         {
             .main-box 
@@ -47,6 +47,7 @@
             padding-left: 50px;
             padding-right: 50px;
             grid-template-columns: 1fr;
+            grid-gap: 0px;
             .right 
             {
                 max-width: unset;
@@ -58,6 +59,7 @@
 {
     .main-footer 
     {
+        height: calc(100vh + 280px);
         .footer-wrapper 
         {
             grid-gap: unset;
