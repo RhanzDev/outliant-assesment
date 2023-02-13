@@ -24,7 +24,7 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container class="wrapper">
+    <q-page-container style="margin-top: 80px;" class="wrapper">
       <router-view />
     </q-page-container>
     <main-footer />

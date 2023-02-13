@@ -2,6 +2,9 @@
 
 .main-header
 {
+    position: fixed;
+    background-color: white;
+    z-index: 999;
     .drawer_button 
     {
         display: none;
