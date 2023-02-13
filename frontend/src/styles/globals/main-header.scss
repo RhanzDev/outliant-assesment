@@ -1,0 +1,76 @@
+@use '../v';
+
+.main-header
+{
+    .drawer_button 
+    {
+        display: none;
+    }
+    .q-toolbar 
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+    .logo 
+    {
+        font-weight: 600;
+        font-size: 25px;
+        color: v.$black;
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+        span 
+        {
+            width: 7px;
+            height: 7px;
+            margin-bottom: 12px;
+            background-color: v.$gray;
+            border-radius: 100%;
+        }
+    }
+    .menu 
+    {
+        &s 
+        {
+            display: flex;
+            gap: 40px;
+            color: v.$black;
+            font-size: 14px;
+        }
+        &-item 
+        {
+            flex: 1;
+            cursor: pointer;
+            &:hover 
+            {
+                color: v.$dark-gray;
+            }
+        }
+        
+    }
+    .action-button 
+    {
+        .q-btn 
+        {
+            background-color: v.$black;
+            color: v.$white;
+            padding: 8px 25px;
+            border-radius: 8px;
+        }
+    }
+}
+@media only screen and (max-width: 1200px)
+{
+    .main-header 
+    {
+        .menus, .action-button
+        {
+            display: none;
+        }
+        .drawer_button 
+        {
+            display: grid;
+        }
+
+    }
+}

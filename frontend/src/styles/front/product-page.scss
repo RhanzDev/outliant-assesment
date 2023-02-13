@@ -1,0 +1,173 @@
+@use '../v';
+.product-page 
+{
+    display: grid;
+    grid-gap: 50px;
+    .on__top 
+    {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 80px;
+        .top_content
+        {
+            display: flex;
+            gap: 10px;
+            align-items: flex-end;
+            justify-content: space-between;
+            .q-input 
+            {
+                display: grid;
+                width: 50%;
+            }
+        }
+        .page-title 
+        {
+            font-size: 40px;
+            display: grid;
+            align-items: baseline;
+            font-weight: 500;
+            line-height: 35px;
+        }
+    }
+    .table-w-form 
+    {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 80px;
+    }
+    .left 
+    {
+        display: grid;
+        grid-gap: 50px;
+        
+        .q-table__container 
+        {
+            border: 1px solid v.$black;
+            overflow: hidden;
+        }
+        .q-table 
+        {
+            thead 
+            {
+                text-transform: capitalize;
+                background-color: v.$light-gray;
+                tr 
+                {
+                    th 
+                    {
+                        font-size: 16px;
+                    }
+                }
+            }
+            .q-btn 
+            {
+                min-width: 70px;
+                border: 1px solid v.$black;
+                &:first-child 
+                {
+                    background-color: v.$black;
+                    color: v.$white;
+                }
+            }
+        }
+    }
+    .right 
+    {
+        .q-form 
+        {
+            text-align: center;
+            background-color: v.$light-gray;
+            padding: 60px 50px;
+            display: grid;
+            row-gap: 30px;
+            .header 
+            {
+                display: grid;
+                justify-self: center;
+                max-width: 350px;
+                width: 100%;
+            }
+            .header-text 
+            {
+                font-size: 24px;
+                font-weight: 600;
+            }
+            .header-desc 
+            {
+                font-size: 16px;
+                color: v.$medium-gray;
+            }
+            .form-action 
+            {
+                display: grid;
+                row-gap: 20px;
+                .q-btn 
+                {
+                    background-color: v.$black;
+                    color: v.$white
+                }
+                .q-input 
+                {
+                    border-radius: 5px;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1000px) 
+{
+    .product-page 
+    {
+        .on__top, .table-w-form 
+        {
+            grid-template-columns: 1fr;
+        }
+        .on__top 
+        {
+            .for_balance
+            {
+                display: none;
+            }
+        }
+
+    }
+
+}
+@media only screen and (max-width:550px) 
+{
+    .product-page 
+    {
+        .on__top 
+        {
+            .top_content
+            {
+                width: 100%;
+                display: block;
+                .page-title 
+                {
+                    font-size: 30px;
+                }
+                .q-input 
+                {
+                    width: 100%;
+                    margin-top: 30px;
+                }
+            }
+        }
+
+    }
+}
+@media only screen and (max-width:450px) 
+{
+    .product-page 
+    {
+        .right 
+        {
+            .q-form
+            {
+                padding: 50px 8%;
+            }
+        }
+    }
+}

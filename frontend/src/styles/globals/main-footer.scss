@@ -1,0 +1,82 @@
+@use '../v';
+.main-footer
+{
+    background-color: v.$light-gray;
+    margin-top: 150px;
+    display: grid;
+    .footer-wrapper 
+    {
+        max-width: v.$max-width;
+        padding: 20px 100px 100px 100px;
+        display: grid;
+        justify-self: center;
+        width: 100%;
+        margin-top: -100px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 50px;
+        .left 
+        {
+            .main-box 
+            {
+                width: 100%;
+                height: 500px;
+                background-color: v.$gray;
+            }
+        }
+        .right 
+        {
+            margin-top: 50px;
+            max-width: 500px;
+            display: grid;
+            grid-gap: 25px;
+            align-content: center;
+
+        }
+    }
+}
+@media only screen and (max-width: 1000px) 
+{
+    .main-footer 
+    {
+        .footer-wrapper 
+        {
+            padding-left: 50px;
+            padding-right: 50px;
+            grid-template-columns: 1fr;
+            .right 
+            {
+                max-width: unset;
+            }
+        }
+    }
+}
+@media only screen and (max-width:550px) 
+{
+    .main-footer 
+    {
+        .footer-wrapper 
+        {
+            grid-gap: unset;
+            padding-left: 8%;
+            padding-right: 8%;
+        }
+    }
+
+}
+@media only screen and (max-width:450px) 
+{
+    .main-footer 
+    {
+        .footer-wrapper 
+        {
+            .left 
+            {
+                .main-box 
+                {
+                    height: 300px;
+                }
+            }
+        }
+    }
+
+}

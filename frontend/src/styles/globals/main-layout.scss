@@ -1,0 +1,95 @@
+@use '../v';
+.q-layout 
+{
+    display: grid;
+    align-items: flex-start;
+    grid-template-rows: auto 1fr;
+    grid-gap: 50px;
+}
+.wrapper 
+{
+    padding: 20px 100px 0 100px;
+    max-width: v.$max-width;
+    width: 100%;
+    display: grid;
+    justify-self: center;
+}
+.section-title 
+{
+    font-size: 60px;
+    line-height: 65px;
+    font-weight: bold;
+}
+.section-desc 
+{
+    font-size: 16px;
+    color: v.$dark-gray;
+}
+.action-section 
+{
+    display: flex;
+    gap: 10px;
+    .q-btn 
+    {
+        padding: 8px 25px;
+        border: 1px solid v.$black;
+        border-radius: 8px;
+        font-size: 16px;
+        &:first-child 
+        {
+            background-color: v.$black;
+            color: v.$white;
+        }
+        &:last-child 
+        {
+            font-weight: 600;
+        }
+    }
+}
+@media only screen and (max-width: 1000px)
+{
+    .wrapper 
+    {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+@media only screen and (max-width:550px) 
+{
+    .q-layout 
+    {
+        grid-gap: 10px;
+    }
+    .wrapper 
+    {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+    .section-title 
+    {
+        font-size: 40px;
+        line-height: 45px;
+    }
+    .section-desc 
+    {
+        font-size: 15px;
+    }
+
+}
+@media only screen and (max-width:450px) 
+{
+    .section-title 
+    {
+        font-size: 30px;
+        line-height: 35px;
+    }
+    .section-desc 
+    {
+        font-size: 15px;
+    }
+    .action-section  
+    {
+        display: grid;
+    }
+
+}

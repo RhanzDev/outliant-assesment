@@ -1,0 +1,140 @@
+@use '../v';
+.homepage 
+{
+    display: grid;
+    row-gap: 50px;
+    .top-sect 
+    {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 50px;
+        .left 
+        {
+            display: grid;
+            align-content: center;
+            grid-gap: 25px;
+            height: 100%;
+            max-width: 500px;
+        }
+        .right 
+        {
+            position: relative;
+            min-height: 600px;
+            .main-box 
+            {
+                // max-width: 200px;
+                margin-top: 10%;
+                width: calc(100% - 17.5%);
+                height: 450px;
+                background-color: v.$gray;
+            }
+            .mini-box 
+            {
+                position: absolute;
+                width: 35%;
+                height: 35%;
+                background-color: v.$medium-gray;
+                top: 0;
+                right: 0;
+            }
+            
+        }
+    }
+    .mid-sect 
+    {
+        display: grid;
+        grid-template-columns: 1fr 1.8fr 1fr;
+        grid-gap: 50px;
+        .text-holder 
+        {
+            display: grid;
+            grid-gap: 15px;
+            grid-template-rows: auto 100%;
+            &:last-child 
+            {
+                display: grid;
+                align-self: flex-end;
+            }
+
+        }
+        .header-text 
+        {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .desc 
+        {
+            color: v.$medium-gray;
+            font-size: 16px;
+        }
+        .mid 
+        {
+            .main-box 
+            {
+                width: 100%;
+                height: 500px;
+                background-color: v.$gray;
+            }
+        }
+    }
+    
+}
+@media only screen and (max-width: 1000px)
+{
+    .homepage
+    {
+        .top-sect 
+        {
+            grid-template-columns: 1fr;
+            .left 
+            {
+                max-width: unset;
+            }
+        }
+        .mid-sect 
+        {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+@media only screen and (max-width:550px) 
+{
+    .homepage
+    {
+        .top-sect 
+        {
+             .right 
+             {
+                min-height: unset;
+             }
+        }
+    }
+
+}
+@media only screen and (max-width:450px) 
+{
+    .homepage
+    {
+        .top-sect 
+        {
+             .right 
+             {
+                .main-box 
+                {
+                    height: 300px;
+                }
+             }
+        }
+        .mid-sect 
+        {
+            .mid 
+            {
+                .main-box 
+                {
+                    height: 300px;
+                }
+            }
+        }
+    }
+
+}
