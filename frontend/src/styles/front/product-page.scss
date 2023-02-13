@@ -34,6 +34,10 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 80px;
+        .grid-table 
+        {
+            display: none;
+        }
     }
     .left 
     {
@@ -115,6 +119,52 @@
         }
     }
 }
+.q-dialog 
+{
+    .q-card 
+    {
+        background-color: v.$light-gray;
+    }
+    .q-form 
+    {
+        text-align: center;
+        padding: 60px 50px;
+        display: grid;
+        row-gap: 30px;
+        .header 
+        {
+            display: grid;
+            justify-self: center;
+            max-width: 350px;
+            width: 100%;
+        }
+        .header-text 
+        {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .header-desc 
+        {
+            font-size: 16px;
+            color: v.$medium-gray;
+        }
+        .form-action 
+        {
+            display: grid;
+            row-gap: 20px;
+            .q-btn 
+            {
+                background-color: v.$black;
+                color: v.$white
+            }
+            .q-input 
+            {
+                border-radius: 5px;
+                overflow: hidden;
+            }
+        }
+    }
+}
 @media only screen and (max-width: 1000px) 
 {
     .product-page 
@@ -152,6 +202,52 @@
                 {
                     width: 100%;
                     margin-top: 30px;
+                }
+            }
+        }
+        .table-w-form 
+        {
+            .q-table__container
+            {
+                display: none;
+            }
+            .grid-table 
+            {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                .table-item 
+                {
+                    padding: 15px;
+                    flex: 1;
+                    min-width: 200px;
+                    background-color: v.$light-gray;
+                    .w__name_price 
+                    {
+                        .label 
+                        {
+                            color: v.$medium-gray;
+                        }
+                    }
+                    .actions 
+                    {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                        margin-top: 20px;
+                        .q-btn
+                        {
+                            border: 1px solid v.$black;
+                            flex: 1;
+                            &:first-child 
+                            {
+                                // max-width: 100px;
+                                // width: 100%;
+                                background-color: v.$black;
+                                color: v.$white;
+                            }
+                        }
+                    }
                 }
             }
         }

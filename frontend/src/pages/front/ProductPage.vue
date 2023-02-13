@@ -25,6 +25,20 @@
                     </q-td>
                 </template>
                 </q-table>
+                <div class="grid-table">
+                    <div class="table-item" v-for="(item,  index) in rows" :key="index">
+                        <div class="w__name_price">
+                            <div class="label">Name</div>
+                            <div class="Value">{{ item.name }}</div>
+                            <div class="label">Price</div>
+                            <div class="Value">{{ item.price }}</div>
+                        </div>
+                        <div class="actions">
+                            <q-btn flat label="Edit" @click=editDataOnDialog(item) />
+                            <q-btn flat label="delete" @click="deleteData(item.id)"/>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="right">
                 <q-form @submit.prevent="submitFrom()">
@@ -42,6 +56,25 @@
                 </q-form>
             </div>
         </div>
+        <q-dialog v-model="open_edit_dialog">
+            <q-card>
+                <q-card-section>
+                    <q-form @submit.prevent="submitFrom()">
+                        <div class="header">
+                            <div class="header-text">Header Text</div>
+                            <div class="header-desc">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam!
+                            </div>
+                        </div>
+                        <div class="form-action">
+                            <q-input dense bg-color="white" standout="bg-black"  v-model="form_data.name" label="Name"/>
+                            <q-input dense bg-color="white" standout="bg-black" v-model="form_data.price" label="Price"/>
+                            <q-btn no-caps flat type="submit" :label="edit_data ? 'Save': 'Create'" v-close-popup/>
+                        </div>
+                    </q-form>
+                </q-card-section>
+            </q-card>
+        </q-dialog>
     </div>
 </template>
 
@@ -51,6 +84,7 @@ export default
     filters: { },
     data:() =>(
     {
+        open_edit_dialog: false,
         edit_data: false,
         filterr: null,
         pagination: { rowsPerPage: 10 },
@@ -149,7 +183,7 @@ export default
                 }
                 this.rows = new_rows_data;
                 this.edit_data = false;
-                this.form_data={ name: null, price: null }
+                this.form_data={ name: null, price: null };
             }
             else 
             {
@@ -165,6 +199,11 @@ export default
             this.form_data.name = data.name;
             this.form_data.price = data.price;
             this.form_data.id = data.id;
+        },
+        editDataOnDialog(data)
+        {
+            this.open_edit_dialog = true;
+            this.editData(data);
         },
         deleteData(id)
         {
