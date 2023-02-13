@@ -37,7 +37,7 @@
                     <div class="form-action">
                         <q-input dense bg-color="white" standout="bg-black"  v-model="form_data.name" label="Name"/>
                         <q-input dense bg-color="white" standout="bg-black" v-model="form_data.price" label="Price"/>
-                        <q-btn no-caps flat type="submit" :label="edit_data ? 'Save Updates': 'Call to Action'"/>
+                        <q-btn no-caps flat type="submit" :label="edit_data ? 'Save': 'Create'"/>
                     </div>
                 </q-form>
             </div>

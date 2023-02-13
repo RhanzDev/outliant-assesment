@@ -44,9 +44,14 @@
         {
             flex: 1;
             cursor: pointer;
+            transition: all .5s ease-in-out;
             &:hover 
             {
                 color: v.$dark-gray;
+            }
+            &.active 
+            {
+                color: $primary;
             }
         }
         

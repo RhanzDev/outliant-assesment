@@ -3,10 +3,10 @@
       <q-toolbar>
         <div class="logo">Logo <span></span></div>
         <div class="menus">
-            <div class="menu-item" @click="this.$router.push({name: 'home'})">Home</div>
-            <div class="menu-item">About</div>
-            <div class="menu-item">Services</div>
-            <div class="menu-item" @click="this.$router.push({name: 'products'})"> Products</div>
+            <div class="menu-item" :class="$route.name === 'home' ? 'active' : ''" @click="this.$router.push({name: 'home'})">Home</div>
+            <div class="menu-item" :class="$route.name === 'about' ? 'active' : ''" >About</div>
+            <div class="menu-item" :class="$route.name === 'services' ? 'active' : ''">Services</div>
+            <div class="menu-item" :class="$route.name === 'products' ? 'active' : ''" @click="this.$router.push({name: 'products'})"> Products</div>
         </div>
         <div class="action-button">
             <q-btn no-caps flat label="Call to Action"/>
