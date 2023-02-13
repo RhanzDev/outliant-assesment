@@ -168,6 +168,7 @@ export default
     {
         submitFrom()
         {
+            this.$q.loading.show();
             if (this.edit_data === true) 
             {
                 let new_rows_data = [];
@@ -182,7 +183,6 @@ export default
                     new_rows_data.push(element);
                 }
                 this.rows = new_rows_data;
-                this.edit_data = false;
                 this.form_data={ name: null, price: null };
             }
             else 
@@ -192,6 +192,9 @@ export default
                 this.rows.push(this.form_data);
                 this.form_data={ name: null, price: null }
             }
+            this.$q.loading.hide();
+            this.$q.dialog({title: this.edit_data ? 'Saved' : 'Created', message: 'Table has been updated.'});
+            this.edit_data = false;
         },
         editData(data)
         {
@@ -207,7 +210,10 @@ export default
         },
         deleteData(id)
         {
+            this.$q.loading.show();
             this.rows = this.rows.filter(row => row.id != id)
+            this.$q.loading.hide();
+            this.$q.dialog({title: 'Deleted', message: 'Data has been deleted.'})
         }
     },
     computed: { }
