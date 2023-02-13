@@ -4,11 +4,13 @@
     background-color: v.$light-gray;
     margin-top: 150px;
     display: grid;
+    height: 100vh;
     .footer-wrapper 
     {
         max-width: v.$max-width;
         padding: 20px 100px 100px 100px;
         display: grid;
+        height: fit-content;
         justify-self: center;
         width: 100%;
         margin-top: -100px;
@@ -30,6 +32,7 @@
             display: grid;
             grid-gap: 25px;
             align-content: center;
+            
 
         }
     }
