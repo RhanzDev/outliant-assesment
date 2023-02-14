@@ -34,7 +34,7 @@
                             <div class="Value">{{ item.price }}</div>
                         </div>
                         <div class="actions">
-                            <q-btn flat label="Edit" @click=editDataOnDialog(item) />
+                            <q-btn flat label="Edit" @click="editDataOnDialog(item)"/>
                             <q-btn flat label="delete" @click="deleteData(item.id)"/>
                         </div>
                     </div>
