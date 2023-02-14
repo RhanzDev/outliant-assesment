@@ -51,7 +51,7 @@
             transition: all .5s ease-in-out;
             &:hover 
             {
-                color: v.$dark-gray;
+                color: $primary;
             }
             &.active 
             {
