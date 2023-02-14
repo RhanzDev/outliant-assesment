@@ -212,6 +212,7 @@ export default
         {
             this.$q.loading.show();
             this.rows = this.rows.filter(row => row.id != id)
+            this.form_data={ name: null, price: null }
             this.$q.loading.hide();
             this.$q.dialog({title: 'Deleted', message: 'Data has been deleted.'})
         }
