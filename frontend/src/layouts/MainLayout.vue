@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <main-header @openDrawer="openDrawer" class="wrapper"/>
+    <main-header @openDrawer="openDrawer" />
 
     <q-drawer
       v-model="leftDrawerOpen"

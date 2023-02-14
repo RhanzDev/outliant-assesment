@@ -4,7 +4,10 @@
 {
     position: fixed;
     background-color: white;
+    width: 100%;
     z-index: 999;
+    display: grid;
+    justify-items: center;
     .drawer_button 
     {
         display: none;
@@ -13,7 +16,7 @@
     {
         display: flex;
         justify-content: space-between;
-        padding: 0px;
+        padding-bottom: 10px;
     }
     .logo 
     {

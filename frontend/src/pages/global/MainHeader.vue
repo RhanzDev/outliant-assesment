@@ -1,6 +1,6 @@
 <template>
     <div elevated class="main-header">
-      <q-toolbar>
+      <q-toolbar class="wrapper">
         <div class="logo">Logo <span></span></div>
         <div class="menus">
             <div class="menu-item" :class="$route.name === 'home' ? 'active' : ''" @click="this.$router.push({name: 'home'})">Home</div>
